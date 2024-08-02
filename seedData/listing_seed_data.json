@@ -1,0 +1,227 @@
+[
+    {
+        "type": "Sailboat",
+        "make": "Beneteau",
+        "model": "Oceanis 45",
+        "size": "45ft",
+        "age": 5,
+        "description": "A beautiful and well-maintained sailboat, perfect for long voyages.",
+        "hull_type": "Monohull",
+        "engine": {
+            "make": "Yanmar",
+            "model": "4JH57",
+            "power": "57 HP",
+            "type": "Inboard"
+        }
+    },
+    {
+        "type": "Motorboat",
+        "make": "Bayliner",
+        "model": "Element E16",
+        "size": "16ft",
+        "age": 2,
+        "description": "A compact and versatile motorboat, ideal for day trips and water sports.",
+        "hull_type": "Monohull",
+        "engine": {
+            "make": "Mercury",
+            "model": "FourStroke",
+            "power": "75 HP",
+            "type": "Outboard"
+        }
+    },
+    {
+        "type": "Catamaran",
+        "make": "Lagoon",
+        "model": "450 F",
+        "size": "45ft",
+        "age": 3,
+        "description": "A luxurious catamaran with spacious interiors and excellent stability.",
+        "hull_type": "Multihull",
+        "engine": {
+            "make": "Volvo Penta",
+            "model": "D2-55",
+            "power": "55 HP",
+            "type": "Inboard"
+        }
+    },
+    {
+        "type": "Fishing Boat",
+        "make": "Boston Whaler",
+        "model": "Montauk 170",
+        "size": "17ft",
+        "age": 1,
+        "description": "A reliable fishing boat with ample storage and great performance.",
+        "hull_type": "Monohull",
+        "engine": {
+            "make": "Mercury",
+            "model": "FourStroke",
+            "power": "90 HP",
+            "type": "Outboard"
+        }
+    },
+    {
+        "type": "Yacht",
+        "make": "Sunseeker",
+        "model": "Manhattan 55",
+        "size": "55ft",
+        "age": 4,
+        "description": "A luxurious yacht with modern amenities and powerful performance.",
+        "hull_type": "Monohull",
+        "engine": {
+            "make": "MAN",
+            "model": "V8",
+            "power": "1000 HP",
+            "type": "Inboard"
+        }
+    },
+    {
+        "type": "Speedboat",
+        "make": "Chaparral",
+        "model": "H2O 19 Sport",
+        "size": "19ft",
+        "age": 3,
+        "description": "A stylish speedboat perfect for quick trips and water sports.",
+        "hull_type": "Monohull",
+        "engine": {
+            "make": "Mercury",
+            "model": "MerCruiser 4.5L",
+            "power": "250 HP",
+            "type": "Inboard"
+        }
+    },
+    {
+        "type": "Dinghy",
+        "make": "Walker Bay",
+        "model": "WB8",
+        "size": "8ft",
+        "age": 1,
+        "description": "A small, lightweight dinghy ideal for short distances and training.",
+        "hull_type": "Monohull",
+        "engine": {
+            "make": "Honda",
+            "model": "BF2.3",
+            "power": "2.3 HP",
+            "type": "Outboard"
+        }
+    },
+    {
+        "type": "Cabin Cruiser",
+        "make": "Sea Ray",
+        "model": "Sundancer 320",
+        "size": "32ft",
+        "age": 4,
+        "description": "A luxurious cabin cruiser with modern amenities and a spacious cabin.",
+        "hull_type": "Monohull",
+        "engine": {
+            "make": "MerCruiser",
+            "model": "6.2L MPI ECT",
+            "power": "350 HP",
+            "type": "Inboard"
+        }
+    },
+    {
+        "type": "Houseboat",
+        "make": "Gibson",
+        "model": "50 Classic",
+        "size": "50ft",
+        "age": 7,
+        "description": "A comfortable houseboat with all the amenities of home on the water.",
+        "hull_type": "Monohull",
+        "engine": {
+            "make": "Crusader",
+            "model": "8.1L MPI",
+            "power": "385 HP",
+            "type": "Inboard"
+        }
+    },
+    {
+        "type": "Jet Ski",
+        "make": "Yamaha",
+        "model": "WaveRunner VX",
+        "size": "11ft",
+        "age": 1,
+        "description": "A high-performance jet ski for thrilling water adventures.",
+        "hull_type": "Monohull",
+        "engine": {
+            "make": "Yamaha",
+            "model": "TR-1 HO",
+            "power": "110 HP",
+            "type": "Inboard"
+        }
+    },
+    {
+        "type": "Pontoon",
+        "make": "Sun Tracker",
+        "model": "Party Barge 22 DLX",
+        "size": "22ft",
+        "age": 2,
+        "description": "A versatile pontoon boat perfect for family outings and parties.",
+        "hull_type": "Multihull",
+        "engine": {
+            "make": "Mercury",
+            "model": "FourStroke",
+            "power": "150 HP",
+            "type": "Outboard"
+        }
+    },
+    {
+        "type": "Trawler",
+        "make": "Nordhavn",
+        "model": "41",
+        "size": "41ft",
+        "age": 3,
+        "description": "A rugged trawler designed for long-distance cruising and liveaboard life.",
+        "hull_type": "Monohull",
+        "engine": {
+            "make": "John Deere",
+            "model": "4045AFM85",
+            "power": "160 HP",
+            "type": "Inboard"
+        }
+    },
+    {
+        "type": "Runabout",
+        "make": "Regal",
+        "model": "1900 ES",
+        "size": "19ft",
+        "age": 4,
+        "description": "A sleek and stylish runabout boat perfect for day cruising.",
+        "hull_type": "Monohull",
+        "engine": {
+            "make": "Volvo Penta",
+            "model": "V6 200",
+            "power": "200 HP",
+            "type": "Inboard"
+        }
+    },
+    {
+        "type": "Bowrider",
+        "make": "Four Winns",
+        "model": "H190",
+        "size": "19ft",
+        "age": 2,
+        "description": "A versatile bowrider boat ideal for family fun and water sports.",
+        "hull_type": "Monohull",
+        "engine": {
+            "make": "Volvo Penta",
+            "model": "200 V6",
+            "power": "200 HP",
+            "type": "Inboard"
+        }
+    },
+    {
+        "type": "Deck Boat",
+        "make": "Hurricane",
+        "model": "SunDeck 2400 OB",
+        "size": "24ft",
+        "age": 3,
+        "description": "A spacious deck boat designed for comfort and entertainment.",
+        "hull_type": "Monohull",
+        "engine": {
+            "make": "Yamaha",
+            "model": "F250",
+            "power": "250 HP",
+            "type": "Outboard"
+        }
+    }
+]
