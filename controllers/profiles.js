@@ -2,12 +2,17 @@ const express = require('express');
 const router = express.Router();
 const User = require('../models/user');
 const verifyToken = require('../middleware/verify-token');
+const bcrypt = require('bcryptjs');
 
 // Create User Route
-router.post("/", async (req, res) => {
+router.post("/signup", async (req, res) => {
     try {
-        // Check data is valid
-    // Hash Password
+        const hashedPassword = bcrypt.hashSync(req.body.password, 12)
+     const newUser = await User.create({
+        username: req.body.username, 
+        password: hashedPassword,
+        email: req.body.email
+     });
     // Create User
     // Reurn Succsess codewith token
     } catch (error) {
