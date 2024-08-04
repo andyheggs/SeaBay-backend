@@ -18,10 +18,10 @@ app.use(cors());
 app.use(express.json());
 
 
-app.use('/test-jwt', testJWTRouter);
-app.use('/users', usersRouter);
+// app.use('/test-jwt', testJWTRouter);
+// app.use('/users', usersRouter);
 app.use('/profiles', profilesRouter);
-app.use('/listings', listingsRouter);
+// app.use('/listings', listingsRouter);
 
 app.listen(3000, () => {
   console.log('The express app is ready!');
