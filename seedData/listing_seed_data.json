@@ -1,227 +1,360 @@
 [
     {
-        "type": "Sailboat",
+        "seller": "ObjectId('60c72b2f5f1b2c001c8d4af1')",
+        "category": "Sail",
+        "hullType": "Monohull",
         "make": "Beneteau",
         "model": "Oceanis 45",
-        "size": "45ft",
+        "boatName": "Sea Breeze",
+        "length": 45,
         "age": 5,
+        "location": {
+            "street": "123 Marina Bay",
+            "city": "Miami",
+            "state": "FL",
+            "postcode": "33101",
+            "country": "USA"
+        },
         "description": "A beautiful and well-maintained sailboat, perfect for long voyages.",
-        "hull_type": "Monohull",
-        "engine": {
-            "make": "Yanmar",
-            "model": "4JH57",
-            "power": "57 HP",
-            "type": "Inboard"
-        }
+        "price": 250000,
+        "additionalInfo": "Includes a full set of sails and navigation equipment.",
+        "offers": [],
+        "listingCreated": "2023-01-01T00:00:00Z"
     },
+
+
     {
-        "type": "Motorboat",
+        "seller": "ObjectId('60c72b2f5f1b2c001c8d4af2')",
+        "category": "Motor",
+        "hullType": "Monohull",
         "make": "Bayliner",
         "model": "Element E16",
-        "size": "16ft",
+        "boatName": "Speedy",
+        "length": 16,
         "age": 2,
+        "location": {
+            "street": "456 Harbor Road",
+            "city": "San Diego",
+            "state": "CA",
+            "postcode": "92101",
+            "country": "USA"
+        },
         "description": "A compact and versatile motorboat, ideal for day trips and water sports.",
-        "hull_type": "Monohull",
-        "engine": {
-            "make": "Mercury",
-            "model": "FourStroke",
-            "power": "75 HP",
-            "type": "Outboard"
-        }
+        "price": 18000,
+        "additionalInfo": "Recently serviced and in excellent condition.",
+        "offers": [],
+        "listingCreated": "2023-02-15T00:00:00Z"
     },
+
+
     {
-        "type": "Catamaran",
+        "seller": "ObjectId('60c72b2f5f1b2c001c8d4af3')",
+        "category": "Sail",
+        "hullType": "Catamaran",
         "make": "Lagoon",
         "model": "450 F",
-        "size": "45ft",
+        "boatName": "Ocean Explorer",
+        "length": 45,
         "age": 3,
+        "location": {
+            "street": "789 Dockside Lane",
+            "city": "Fort Lauderdale",
+            "state": "FL",
+            "postcode": "33301",
+            "country": "USA"
+        },
         "description": "A luxurious catamaran with spacious interiors and excellent stability.",
-        "hull_type": "Multihull",
-        "engine": {
-            "make": "Volvo Penta",
-            "model": "D2-55",
-            "power": "55 HP",
-            "type": "Inboard"
-        }
+        "price": 550000,
+        "additionalInfo": "Equipped with modern navigation and safety systems.",
+        "offers": [],
+        "listingCreated": "2023-03-10T00:00:00Z"
     },
+
+
     {
-        "type": "Fishing Boat",
+        "seller": "ObjectId('60c72b2f5f1b2c001c8d4af4')",
+        "category": "Motor",
+        "hullType": "Monohull",
         "make": "Boston Whaler",
         "model": "Montauk 170",
-        "size": "17ft",
+        "boatName": "Fish Finder",
+        "length": 17,
         "age": 1,
+        "location": {
+            "street": "101 Pier Avenue",
+            "city": "Key West",
+            "state": "FL",
+            "postcode": "33040",
+            "country": "USA"
+        },
         "description": "A reliable fishing boat with ample storage and great performance.",
-        "hull_type": "Monohull",
-        "engine": {
-            "make": "Mercury",
-            "model": "FourStroke",
-            "power": "90 HP",
-            "type": "Outboard"
-        }
+        "price": 30000,
+        "additionalInfo": "Comes with fishing gear and a GPS fishfinder.",
+        "offers": [],
+        "listingCreated": "2023-04-05T00:00:00Z"
     },
+
+
     {
-        "type": "Yacht",
+        "seller": "ObjectId('60c72b2f5f1b2c001c8d4af5')",
+        "category": "Motor",
+        "hullType": "Monohull",
         "make": "Sunseeker",
         "model": "Manhattan 55",
-        "size": "55ft",
+        "boatName": "Luxury Cruiser",
+        "length": 55,
         "age": 4,
+        "location": {
+            "street": "202 Yacht Club Drive",
+            "city": "Miami",
+            "state": "FL",
+            "postcode": "33101",
+            "country": "USA"
+        },
         "description": "A luxurious yacht with modern amenities and powerful performance.",
-        "hull_type": "Monohull",
-        "engine": {
-            "make": "MAN",
-            "model": "V8",
-            "power": "1000 HP",
-            "type": "Inboard"
-        }
+        "price": 800000,
+        "additionalInfo": "Features a spacious deck and a premium sound system.",
+        "offers": [],
+        "listingCreated": "2023-05-01T00:00:00Z"
     },
+
+
     {
-        "type": "Speedboat",
+        "seller": "ObjectId('60c72b2f5f1b2c001c8d4af6')",
+        "category": "Motor",
+        "hullType": "Monohull",
         "make": "Chaparral",
         "model": "H2O 19 Sport",
-        "size": "19ft",
+        "boatName": "Wave Rider",
+        "length": 19,
         "age": 3,
+        "location": {
+            "street": "303 Ocean View",
+            "city": "Los Angeles",
+            "state": "CA",
+            "postcode": "90001",
+            "country": "USA"
+        },
         "description": "A stylish speedboat perfect for quick trips and water sports.",
-        "hull_type": "Monohull",
-        "engine": {
-            "make": "Mercury",
-            "model": "MerCruiser 4.5L",
-            "power": "250 HP",
-            "type": "Inboard"
-        }
+        "price": 22000,
+        "additionalInfo": "Recently refurbished with new upholstery.",
+        "offers": [],
+        "listingCreated": "2023-06-10T00:00:00Z"
     },
+
+
     {
-        "type": "Dinghy",
+        "seller": "ObjectId('60c72b2f5f1b2c001c8d4af7')",
+        "category": "Motor",
+        "hullType": "Monohull",
         "make": "Walker Bay",
         "model": "WB8",
-        "size": "8ft",
+        "boatName": "Tiny Sailor",
+        "length": 8,
         "age": 1,
+        "location": {
+            "street": "404 Bay Lane",
+            "city": "Tampa",
+            "state": "FL",
+            "postcode": "33601",
+            "country": "USA"
+        },
         "description": "A small, lightweight dinghy ideal for short distances and training.",
-        "hull_type": "Monohull",
-        "engine": {
-            "make": "Honda",
-            "model": "BF2.3",
-            "power": "2.3 HP",
-            "type": "Outboard"
-        }
+        "price": 3000,
+        "additionalInfo": "Easy to transport and store.",
+        "offers": [],
+        "listingCreated": "2023-07-15T00:00:00Z"
     },
+
+
     {
-        "type": "Cabin Cruiser",
+        "seller": "ObjectId('60c72b2f5f1b2c001c8d4af8')",
+        "category": "Motor",
+        "hullType": "Monohull",
         "make": "Sea Ray",
         "model": "Sundancer 320",
-        "size": "32ft",
+        "boatName": "Sea Comfort",
+        "length": 32,
         "age": 4,
+        "location": {
+            "street": "505 Harbor Point",
+            "city": "San Francisco",
+            "state": "CA",
+            "postcode": "94101",
+            "country": "USA"
+        },
         "description": "A luxurious cabin cruiser with modern amenities and a spacious cabin.",
-        "hull_type": "Monohull",
-        "engine": {
-            "make": "MerCruiser",
-            "model": "6.2L MPI ECT",
-            "power": "350 HP",
-            "type": "Inboard"
-        }
+        "price": 150000,
+        "additionalInfo": "Perfect for weekend getaways.",
+        "offers": [],
+        "listingCreated": "2023-08-20T00:00:00Z"
     },
+
+
     {
-        "type": "Houseboat",
+        "seller": "ObjectId('60c72b2f5f1b2c001c8d4af9')",
+        "category": "Motor",
+        "hullType": "Monohull",
         "make": "Gibson",
         "model": "50 Classic",
-        "size": "50ft",
+        "boatName": "Home on Water",
+        "length": 50,
         "age": 7,
+        "location": {
+            "street": "606 River Road",
+            "city": "New Orleans",
+            "state": "LA",
+            "postcode": "70112",
+            "country": "USA"
+        },
         "description": "A comfortable houseboat with all the amenities of home on the water.",
-        "hull_type": "Monohull",
-        "engine": {
-            "make": "Crusader",
-            "model": "8.1L MPI",
-            "power": "385 HP",
-            "type": "Inboard"
-        }
+        "price": 200000,
+        "additionalInfo": "Includes kitchen, bathroom, and two bedrooms.",
+        "offers": [],
+        "listingCreated": "2023-09-25T00:00:00Z"
     },
+
+
     {
-        "type": "Jet Ski",
+        "seller": "ObjectId('60c72b2f5f1b2c001c8d4afa')",
+        "category": "Motor",
+        "hullType": "Monohull",
         "make": "Yamaha",
         "model": "WaveRunner VX",
-        "size": "11ft",
+        "boatName": "Splash",
+        "length": 11,
         "age": 1,
+        "location": {
+            "street": "707 Lake Shore",
+            "city": "Chicago",
+            "state": "IL",
+            "postcode": "60601",
+            "country": "USA"
+        },
         "description": "A high-performance jet ski for thrilling water adventures.",
-        "hull_type": "Monohull",
-        "engine": {
-            "make": "Yamaha",
-            "model": "TR-1 HO",
-            "power": "110 HP",
-            "type": "Inboard"
-        }
+        "price": 12000,
+        "additionalInfo": "Perfect for summer fun.",
+        "offers": [],
+        "listingCreated": "2023-10-10T00:00:00Z"
     },
+
+
     {
-        "type": "Pontoon",
+        "seller": "ObjectId('60c72b2f5f1b2c001c8d4afb')",
+        "category": "Motor",
+        "hullType": "Multihull",
         "make": "Sun Tracker",
         "model": "Party Barge 22 DLX",
-        "size": "22ft",
+        "boatName": "Party Time",
+        "length": 22,
         "age": 2,
+        "location": {
+            "street": "808 Marina Drive",
+            "city": "Austin",
+            "state": "TX",
+            "postcode": "73301",
+            "country": "USA"
+        },
         "description": "A versatile pontoon boat perfect for family outings and parties.",
-        "hull_type": "Multihull",
-        "engine": {
-            "make": "Mercury",
-            "model": "FourStroke",
-            "power": "150 HP",
-            "type": "Outboard"
-        }
+        "price": 35000,
+        "additionalInfo": "Spacious deck with seating for 10 people.",
+        "offers": [],
+        "listingCreated": "2023-11-15T00:00:00Z"
     },
+
+
     {
-        "type": "Trawler",
+        "seller": "ObjectId('60c72b2f5f1b2c001c8d4afc')",
+        "category": "Motor",
+        "hullType": "Monohull",
         "make": "Nordhavn",
         "model": "41",
-        "size": "41ft",
+        "boatName": "Long Haul",
+        "length": 41,
         "age": 3,
+        "location": {
+            "street": "909 Ocean Drive",
+            "city": "Seattle",
+            "state": "WA",
+            "postcode": "98101",
+            "country": "USA"
+        },
         "description": "A rugged trawler designed for long-distance cruising and liveaboard life.",
-        "hull_type": "Monohull",
-        "engine": {
-            "make": "John Deere",
-            "model": "4045AFM85",
-            "power": "160 HP",
-            "type": "Inboard"
-        }
+        "price": 600000,
+        "additionalInfo": "Built for endurance and comfort.",
+        "offers": [],
+        "listingCreated": "2023-12-20T00:00:00Z"
     },
+
+
     {
-        "type": "Runabout",
+        "seller": "ObjectId('60c72b2f5f1b2c001c8d4afd')",
+        "category": "Motor",
+        "hullType": "Monohull",
         "make": "Regal",
         "model": "1900 ES",
-        "size": "19ft",
+        "boatName": "Day Cruiser",
+        "length": 19,
         "age": 4,
+        "location": {
+            "street": "1010 Pier Street",
+            "city": "Boston",
+            "state": "MA",
+            "postcode": "02101",
+            "country": "USA"
+        },
         "description": "A sleek and stylish runabout boat perfect for day cruising.",
-        "hull_type": "Monohull",
-        "engine": {
-            "make": "Volvo Penta",
-            "model": "V6 200",
-            "power": "200 HP",
-            "type": "Inboard"
-        }
+        "price": 27000,
+        "additionalInfo": "Ideal for coastal trips.",
+        "offers": [],
+        "listingCreated": "2024-01-01T00:00:00Z"
     },
+
+
     {
-        "type": "Bowrider",
+        "seller": "ObjectId('60c72b2f5f1b2c001c8d4afe')",
+        "category": "Motor",
+        "hullType": "Monohull",
         "make": "Four Winns",
         "model": "H190",
-        "size": "19ft",
+        "boatName": "Family Fun",
+        "length": 19,
         "age": 2,
+        "location": {
+            "street": "1111 Harbor Lane",
+            "city": "Houston",
+            "state": "TX",
+            "postcode": "77001",
+            "country": "USA"
+        },
         "description": "A versatile bowrider boat ideal for family fun and water sports.",
-        "hull_type": "Monohull",
-        "engine": {
-            "make": "Volvo Penta",
-            "model": "200 V6",
-            "power": "200 HP",
-            "type": "Inboard"
-        }
+        "price": 29000,
+        "additionalInfo": "Great for water skiing and tubing.",
+        "offers": [],
+        "listingCreated": "2024-02-05T00:00:00Z"
     },
+
+    
     {
-        "type": "Deck Boat",
+        "seller": "ObjectId('60c72b2f5f1b2c001c8d4aff')",
+        "category": "Motor",
+        "hullType": "Monohull",
         "make": "Hurricane",
         "model": "SunDeck 2400 OB",
-        "size": "24ft",
+        "boatName": "Deck Delight",
+        "length": 24,
         "age": 3,
+        "location": {
+            "street": "1212 Lakeside",
+            "city": "Orlando",
+            "state": "FL",
+            "postcode": "32801",
+            "country": "USA"
+        },
         "description": "A spacious deck boat designed for comfort and entertainment.",
-        "hull_type": "Monohull",
-        "engine": {
-            "make": "Yamaha",
-            "model": "F250",
-            "power": "250 HP",
-            "type": "Outboard"
-        }
+        "price": 45000,
+        "additionalInfo": "Ideal for hosting parties on the water.",
+        "offers": [],
+        "listingCreated": "2024-03-15T00:00:00Z"
     }
 ]
