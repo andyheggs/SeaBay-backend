@@ -29,11 +29,15 @@ router.post("/signup", async (req, res) => {
 
 router.post("/signin", async (req, res) => {
     try {
+        // Finds the first User with the corresponding name
         const user = await User.findOne({username: req.body.username})
+        // Hashes req.body.password and compares it to the password from the database
         if (user && bcrypt.compareSync(req.body.password, user.password)){
+            // Creates and returns token
             const token = jwt.sign({user}, process.env.TOKENSECRET);
             return res.status(200).json({token})
         }
+        // Returns 400 Invalid input data responce
         return res.status(400).json({error: "Invalid Details"})
         } catch (error) {
         console.log(error)
