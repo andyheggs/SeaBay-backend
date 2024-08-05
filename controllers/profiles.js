@@ -29,8 +29,13 @@ router.post("/signup", async (req, res) => {
 
 router.post("/signin", async (req, res) => {
     try {
-        
-    } catch (error) {
+        const user = await User.findOne({username: req.body.username})
+        if (user && bcrypt.compareSync(req.body.password, user.password)){
+            const token = jwt.sign({user}, process.env.TOKENSECRET);
+            return res.status(200).json({token})
+        }
+        return res.status(400).json({error: "Invalid Details"})
+        } catch (error) {
         console.log(error)
         res.status(500).json({error: error.message})
     }
