@@ -14,11 +14,14 @@ const listing = require('../models/listing.js');
 // * CREATE NEW OFFER //
 
 
-// * GET OFFERS MADE BY USER //
+// * GET OFFERS MADE BY SELLER TO ANOTHER USER //
 
 
-// * GET OFFERS RECIEVED ON USERS LISTINGS //
+// * GET OFFERS RECIEVED ON BY A USER ON SELLERS LISTING(S) //
 
 
-// * ACCEPT OR REJECT OFFER
+// * ACCEPT OR REJECT OFFER FROM A USER //
 
+
+
+module.exports = router
