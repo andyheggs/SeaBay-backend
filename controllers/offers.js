@@ -11,17 +11,40 @@ const router = express.Router()
 //--------------------------------------- PROTECTED ROUTES-------------------------//
 
 
-// * CREATE NEW OFFER //
+// * GET SPECIFIC OFFER //
+router.get("/:offerId", (req, res) => {
+    
+})
 
+// * GET OFFERS USING LISTINGID //
+router.get("/listing/:listingId", (req, res) => {
+    
+})
 
-// * GET OFFERS MADE BY SELLER TO ANOTHER USER //
-
-
-// * GET OFFERS RECIEVED ON BY A USER ON SELLERS LISTING(S) //
-
+// * GET OFFERS USING USERID //
+router.get("/user/:userId", (req, res) => {
+    
+})
 
 // * ACCEPT OR REJECT OFFER FROM A USER //
+router.post("/asses/:offerId", (req, res) => {
+    
+})
 
+// * CREATE NEW OFFER //
+router.post("/", (req, res) => {
+
+})
+
+// * EDIT OFFERS //
+router.put("/:offerId", (req, res) => {
+    
+})
+
+// * DELETE OFFER //
+router.delete("/:offerId", (req, res) => {
+    
+})
 
 
 module.exports = router
