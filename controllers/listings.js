@@ -77,7 +77,7 @@ router.post('/', async (req, res) => {
       const listing = await Listing.create(req.body)
       
       // Populate seller info in new listing doc to inc. seller details
-      await listing.populate('seller').execPopulate()
+      await listing.populate('seller')
       
       // Return 201 Created success status with new listing as JSON
       return res.status(201).json(listing)
@@ -134,6 +134,9 @@ router.put('/:id', async (req, res) => {
       // Find the listing by ID
       const listing = await Listing.findById(req.params.id).populate('seller')
 
+      console.log(listing)
+      console.log("USer", req.user)
+      console.log(listing.seller)
       // If no listing exists:
       if (!listing) {
           return res.status(404).json({ error: 'Listing not found' })
@@ -171,7 +174,6 @@ router.delete('/:id', async (req, res) => {
   try {
       // Find the listing by ID and populate the seller field
       const listing = await Listing.findById(req.params.id).populate('seller')
-
       if (!listing) {
           return res.status(404).json({ error: 'Listing not found' })
       }
@@ -182,7 +184,7 @@ router.delete('/:id', async (req, res) => {
       }
 
       // Delete the listing
-      await listing.remove()
+      await Listing.findByIdAndDelete(req.params.id)
 
       // Return 204 No Content success status
       return res.status(204).send()
