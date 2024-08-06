@@ -70,7 +70,15 @@ router.put("/:offerId", (req, res) => {
 
 // * DELETE OFFER //
 router.delete("/:offerId", (req, res) => {
-    
+    try {
+        const offer = Offer.findById(req.params.offerId)
+        if (!offer.user.equals(req.user._id)) return res.status(403).json({error: "Unauthorized Access"})
+        Offer.findByIdAndDelete(req.params.offerId)
+        res.status(200)
+    } catch (error) {
+        console.log(error);
+        res.status(500).json({ errorMessage: error.message });
+    }
 })
 
 
