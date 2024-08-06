@@ -2,12 +2,13 @@ const express = require('express');
 const router = express.Router();
 const jwt = require('jsonwebtoken');
 
-router.get('/sign-token', (req, res) => {
+router.post('/sign-token', (req, res) => {
     // Mock user object added
     const user = {
       _id: 1,
       username: 'test',
       password: 'test',
+      email: 'test',
     };
 
 

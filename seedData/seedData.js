@@ -1,25 +1,34 @@
 const mongoose = require('mongoose');
-const fs = require('fs');
-const path = require('path');
-const Boat = require('../models/listing'); 
+const dotenv = require('dotenv');
+dotenv.config();
 
+const Listing = require('../models/listing');
+const listingData = require('./listing_seed_data.json');
 
-mongoose.connect('mongodb://localhost:27017/boat-trading-app', {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-});
+mongoose.connect(process.env.MONGODB_URI)
+  .then(() => {
+    console.log('Connected to MongoDB');
+    seedDatabase();
+  })
+  .catch(err => {
+    console.error('MongoDB connection error:', err);
+  });
 
-// Read JSON data from file
-const dataPath = path.join(__dirname, 'listing_seed_data.json');
-const seedData = JSON.parse(fs.readFileSync(dataPath, 'utf8'));
+async function seedDatabase() {
+  try {
+    await Listing.deleteMany({});
+    console.log('Listings collection cleared');
 
-// Insert seed data into the database
-Boat.insertMany(seedData)
-    .then(() => {
-        console.log('Data seeded successfully');
-        mongoose.connection.close();
-    })
-    .catch(err => {
-        console.error('Error seeding data:', err);
-        mongoose.connection.close();
+    const listings = listingData.map(listing => {
+      listing.seller = new mongoose.Types.ObjectId(listing.seller.replace("ObjectId('", "").replace("')", ""));
+      return listing;
     });
+    
+    await Listing.insertMany(listings);
+    console.log('Listings seeded successfully');
+  } catch (error) {
+    console.error('Error seeding data:', error);
+  } finally {
+    mongoose.connection.close();
+  }
+}
