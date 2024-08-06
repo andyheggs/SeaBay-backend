@@ -18,7 +18,7 @@ const listingSchema = new mongoose.Schema({
     hullType: {
         type: String,
         required: true,
-        enum: ['Monohull', 'Catamaran', 'Trimaran', 'Other']
+        enum: ['Monohull', 'Catamaran', 'Trimaran', 'Multihull', 'Other']
     },
     
     make: {type: String, required: true},
