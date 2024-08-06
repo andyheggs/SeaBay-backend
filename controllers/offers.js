@@ -1,10 +1,8 @@
-/*
-
 const express = require('express')
 const verifyToken = require('../middleware/verify-token.js')
 const offers = require('../models/offer.js')
 const listing = require('../models/listing.js');
-//const router = express.Router()
+const router = express.Router()
 
 //--------------------------------------- PUBLIC ROUTES-------------------------//
 
@@ -26,4 +24,4 @@ const listing = require('../models/listing.js');
 
 
 
-module.exports = router */
+module.exports = router

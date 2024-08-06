@@ -5,6 +5,7 @@ const userSchema = new mongoose.Schema({
     password: {type: String, required: true },
     email: {type: String, required: true },
     listings: [{type: mongoose.Schema.Types.ObjectId, ref: "Listing"}],
+    offers: [{type: mongoose.Schema.Types.ObjectId, ref: "Offer"}]
 })
 
 userSchema.set("toJSON", {
