@@ -13,7 +13,7 @@ const router = express.Router()
 router.use(verifyToken)
 
 // * GET SPECIFIC OFFER //
-router.get("/:offerId", (req, res) => {
+router.get("/:offerId", async (req, res) => {
     try {
         const offer = Offer.findById(req.params.offerId)
     res.status(200).json(offer)
@@ -29,8 +29,18 @@ router.post("/asses/:offerId", (req, res) => {
 })
 
 // * CREATE NEW OFFER //
-router.post("/", (req, res) => {
-
+router.post("/", async (req, res) => {
+    try{
+        req.body.rejected = false 
+        req.body.user = req.user._id
+        const newOffer = Offer.create(req.body)
+        newOffer._doc.user = req.user
+        // Might need to add in the listingId as well but idk
+        res.status(200).json(newOffer)
+    } catch (error) {
+        console.log(error);
+        res.status(500).json({ errorMessage: error.message });
+    }
 })
 
 // * EDIT OFFERS //
