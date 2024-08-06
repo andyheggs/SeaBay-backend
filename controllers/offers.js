@@ -24,7 +24,7 @@ router.get("/:offerId", async (req, res) => {
 })
 
 // * ACCEPT OR REJECT OFFER FROM A USER (takes a question parameter {rejected:bool})//
-router.put("/asses/:offerId", (req, res) => {
+router.put("/assess/:offerId", (req, res) => {
 try {
     const offer = Offer.findById(req.params.offerId).populate("listing")
     if (offer.listing.seller.equals(req.user._id)) return res.status(403).json({error: "Unauthorized Access"})
@@ -54,7 +54,18 @@ router.post("/", async (req, res) => {
 
 // * EDIT OFFERS //
 router.put("/:offerId", (req, res) => {
-    
+    try {
+        const offer = Offer.findById(req.params.offerId)
+        if (!offer.user.equals(req.user._id)) return res.status(403).json({error: "Unauthorized Access"})
+        req.body.user = req.user
+    req.body.listing = offer.listing
+    req.body.rejected = false
+        const updatedOffer = Offer.findByIdAndUpdate(req.params.offerId, req.body, {new: true})
+        res.status(200).json(updatedOffer)
+    } catch (error) {
+        console.log(error);
+        res.status(500).json({ errorMessage: error.message });
+    }
 })
 
 // * DELETE OFFER //
