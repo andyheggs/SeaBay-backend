@@ -23,9 +23,18 @@ router.get("/:offerId", async (req, res) => {
     }
 })
 
-// * ACCEPT OR REJECT OFFER FROM A USER //
-router.post("/asses/:offerId", (req, res) => {
-    
+// * ACCEPT OR REJECT OFFER FROM A USER (takes a question parameter {rejected:bool})//
+router.put("/asses/:offerId", (req, res) => {
+try {
+    const offer = Offer.findById(req.params.offerId).populate("listing")
+    if (offer.listing.seller.equals(req.user._id)) return res.status(403).json({error: "Unauthorized Access"})
+    offer.rejected = req.params.rejected
+    const updatedOffer = Offer.findByIdAndUpdate(req.params.offerId, offer, {new: true})
+    res.status(200).json(updatedOffer)
+} catch (error) {
+    console.log(error);
+    res.status(500).json({ errorMessage: error.message });
+}
 })
 
 // * CREATE NEW OFFER //
