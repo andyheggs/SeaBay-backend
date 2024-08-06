@@ -23,16 +23,6 @@ router.get("/:offerId", (req, res) => {
     }
 })
 
-// * GET OFFERS USING LISTINGID //
-router.get("/listing/:listingId", (req, res) => {
-    
-})
-
-// * GET OFFERS USING USERID //
-router.get("/user/:userId", (req, res) => {
-    
-})
-
 // * ACCEPT OR REJECT OFFER FROM A USER //
 router.post("/asses/:offerId", (req, res) => {
     
