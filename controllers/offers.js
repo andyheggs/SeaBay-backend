@@ -1,7 +1,7 @@
 const express = require('express')
 const verifyToken = require('../middleware/verify-token.js')
-const offers = require('../models/offer.js')
-const listing = require('../models/listing.js');
+const Offer = require('../models/offer.js')
+const Listing = require('../models/listing.js');
 const router = express.Router()
 
 //--------------------------------------- PUBLIC ROUTES-------------------------//
@@ -10,10 +10,17 @@ const router = express.Router()
 
 //--------------------------------------- PROTECTED ROUTES-------------------------//
 
+router.use(verifyToken)
 
 // * GET SPECIFIC OFFER //
 router.get("/:offerId", (req, res) => {
-    
+    try {
+        const offer = Offer.findById(req.params.offerId)
+    res.status(200).json(offer)
+    } catch (error) {
+        console.log(error);
+        res.status(500).json({ errorMessage: error.message });
+    }
 })
 
 // * GET OFFERS USING LISTINGID //
