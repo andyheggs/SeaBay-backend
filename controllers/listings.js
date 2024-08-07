@@ -1,6 +1,7 @@
 const express = require('express')
 const verifyToken = require('../middleware/verify-token.js')
 const Listing = require('../models/listing.js')
+const User = require('../models/user.js')
 const router = express.Router()
 
 //--------------------------------------- PUBLIC ROUTES-------------------------//
@@ -77,8 +78,11 @@ router.post('/', async (req, res) => {
       const listing = await Listing.create(req.body)
       
       // Populate seller info in new listing doc to inc. seller details
-      await listing.populate('seller').execPopulate()
-      
+      await listing.populate('seller')
+
+      // Add Listing_Id to the User Model's Listings 
+      const newUser = await User.findByIdAndUpdate(listing.seller._id, { $push: { listings: listing._id } }, {new:true})
+
       // Return 201 Created success status with new listing as JSON
       return res.status(201).json(listing)
 
