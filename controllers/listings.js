@@ -186,7 +186,7 @@ router.delete('/:id', async (req, res) => {
       }
 
       // Delete the listing
-      await listing.remove()
+      await Listing.findByIdAndDelete(req.params.id)
 
       // Return 204 No Content success status
       return res.status(204).send()
