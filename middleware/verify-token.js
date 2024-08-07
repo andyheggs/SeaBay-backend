@@ -9,7 +9,7 @@ function verifyToken(req, res, next) {
       const decoded = jwt.verify(token, process.env.JWT_SECRET);
 
       // Assign decoded payload to req.user
-      req.user = decoded;
+      req.user = decoded.user;
 
       // Call next() to invoke the next middleware function
       next();
