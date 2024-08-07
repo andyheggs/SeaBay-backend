@@ -44,6 +44,9 @@ const listingSchema = new mongoose.Schema({
     price: {type: Number, required: true },
 
     additionalInfo: {type: String},
+
+    //new field to add image to form
+    vesselImage: {type: String},
     
     listingCreated: {type: Date, default: Date.now},
 
