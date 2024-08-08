@@ -1,0 +1,78 @@
+[
+    {
+      "username": "seller1",
+      "password": "password1",
+      "email": "seller1@example.com"
+    },
+    {
+      "username": "seller2",
+      "password": "password2",
+      "email": "seller2@example.com"
+    },
+    {
+      "username": "seller3",
+      "password": "password3",
+      "email": "seller3@example.com"
+    },
+    {
+      "username": "seller4",
+      "password": "password4",
+      "email": "seller4@example.com"
+    },
+    {
+      "username": "seller5",
+      "password": "password5",
+      "email": "seller5@example.com"
+    },
+    {
+      "username": "seller6",
+      "password": "password6",
+      "email": "seller6@example.com"
+    },
+    {
+      "username": "seller7",
+      "password": "password7",
+      "email": "seller7@example.com"
+    },
+    {
+      "username": "seller8",
+      "password": "password8",
+      "email": "seller8@example.com"
+    },
+    {
+      "username": "seller9",
+      "password": "password9",
+      "email": "seller9@example.com"
+    },
+    {
+      "username": "seller10",
+      "password": "password10",
+      "email": "seller10@example.com"
+    },
+    {
+      "username": "seller11",
+      "password": "password11",
+      "email": "seller11@example.com"
+    },
+    {
+      "username": "seller12",
+      "password": "password12",
+      "email": "seller12@example.com"
+    },
+    {
+      "username": "seller13",
+      "password": "password13",
+      "email": "seller13@example.com"
+    },
+    {
+      "username": "seller14",
+      "password": "password14",
+      "email": "seller14@example.com"
+    },
+    {
+      "username": "seller15",
+      "password": "password15",
+      "email": "seller15@example.com"
+    }
+  ]
+  

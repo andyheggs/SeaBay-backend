@@ -3,7 +3,9 @@ const dotenv = require('dotenv');
 dotenv.config();
 
 const Listing = require('../models/listing');
+const User = require('../models/user');
 const listingData = require('./listing_seed_data.json');
+const userData = require('./user_seed_data.json');
 
 mongoose.connect(process.env.MONGODB_URI)
   .then(() => {
@@ -16,14 +18,22 @@ mongoose.connect(process.env.MONGODB_URI)
 
 async function seedDatabase() {
   try {
+    // Clear existing collections
     await Listing.deleteMany({});
-    console.log('Listings collection cleared');
+    await User.deleteMany({});
+    console.log('Listings and Users collections cleared');
 
-    const listings = listingData.map(listing => {
-      listing.seller = new mongoose.Types.ObjectId(listing.seller.replace("ObjectId('", "").replace("')", ""));
+    // Create users
+    const createdUsers = await User.insertMany(userData);
+    console.log('Users seeded successfully');
+
+    // Map user IDs to listings
+    const listings = listingData.map((listing, index) => {
+      listing.seller = createdUsers[index % createdUsers.length]._id; // Assign users cyclically
       return listing;
     });
-    
+
+    // Create listings
     await Listing.insertMany(listings);
     console.log('Listings seeded successfully');
   } catch (error) {
