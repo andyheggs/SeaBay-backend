@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const bcrypt = require('bcryptjs')
 const dotenv = require('dotenv');
 dotenv.config();
 
@@ -23,8 +24,14 @@ async function seedDatabase() {
     await User.deleteMany({});
     console.log('Listings and Users collections cleared');
 
+    // Hash userData passwords
+    const hashedUserData = userData.map((user) => {
+      user.password = bcrypt.hashSync(user.password, 12)
+      return user
+    })
+
     // Create users
-    const createdUsers = await User.insertMany(userData);
+    const createdUsers = await User.insertMany(hashedUserData);
     console.log('Users seeded successfully');
 
     // Map user IDs to listings
