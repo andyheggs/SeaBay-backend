@@ -71,17 +71,23 @@ router.use(verifyToken)
 router.post('/', async (req, res) => {
 
     try {
-      // Attach seller ID from the authed user
-      req.body.seller = req.user._id;
+
+      // Log authenticated user
+      console.log('Authenticated User:', req.user)
       
+      // Attach seller ID from the authed user
+      req.body.seller = req.user._id
+      console.log(req.body)
       // Create new listing in DB
       const listing = await Listing.create(req.body)
+      console.log(listing)
+      
       
       // Populate seller info in new listing doc to inc. seller details
-      await listing.populate('seller')
+      //await listing.populate('seller')
 
       // Add Listing_Id to the User Model's Listings 
-      const newUser = await User.findByIdAndUpdate(listing.seller._id, { $push: { listings: listing._id } }, {new:true})
+      //const newUser = await User.findByIdAndUpdate(listing.seller, { $push: { listings: listing._id } }, {new:true})
 
       // Return 201 Created success status with new listing as JSON
       return res.status(201).json(listing)
