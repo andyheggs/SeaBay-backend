@@ -16,7 +16,7 @@ router.post("/signup", async (req, res) => {
         username: req.body.username, 
         password: hashedPassword,
         email: req.body.email
-     })
+     }).populate("listings","offers")
     //  Creates the new token
      const token = jwt.sign({username: newUser.username, _id : newUser._id}, process.env.TOKENSECRET)
     //  Returns both the created user and the token for that user 
@@ -30,13 +30,14 @@ router.post("/signup", async (req, res) => {
 router.post("/signin", async (req, res) => {
     try {
         // Finds the first User with the corresponding name
-        const user = await User.findOne({username: req.body.username})
+        const user = await User.findOne({username: req.body.username}).populate("listings","offers")
         // Hashes req.body.password and compares it to the password from the database
         if (user && bcrypt.compareSync(req.body.password, user.password)){
             // Creates and returns token
             const token = jwt.sign({user}, process.env.TOKENSECRET);
             return res.status(200).json({token})
         }
+        await newUser.populate("listings","offers")
         // Returns 400 Invalid input data responce
         return res.status(400).json({error: "Invalid Details"})
         } catch (error) {

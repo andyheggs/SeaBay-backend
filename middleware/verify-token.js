@@ -18,7 +18,7 @@ function verifyToken(req, res, next) {
         const decoded = jwt.verify(token, process.env.JWT_SECRET)
 
         // Assign decoded payload to req.user for further use in subsequent middleware or route handlers
-        req.user = decoded
+        req.user = decoded.user
 
         // Log decoded user
         console.log('Decoded User:', decoded ) 
