@@ -41,7 +41,7 @@ router.get('/:id', async (req, res) => {
       const listing = await Listing.findById(req.params.id)
           
         // Populate seller details
-          .populate('seller', 'username email') 
+          .populate('seller', 'offers') 
       
       if (!listing) {
           return res.status(404).json({ error: 'Listing not found' })
@@ -77,6 +77,7 @@ router.post('/', async (req, res) => {
       
       // Attach seller ID from the authed user
       console.log("TYROEPSPSPSD", typeof(req.user._id))
+      req.body.seller = req.user._id
       console.log(req.body)
       // Create new listing in DB
       const listing = await Listing.create(req.body)

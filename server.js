@@ -9,12 +9,14 @@ const usersRouter = require('./controllers/users')
 const profilesRouter = require('./controllers/profiles')
 const listingsRouter = require('./controllers/listings.js')
 const offersRouter = require('./controllers/offers.js')
+const morgan = require("morgan")
 
 mongoose.connect(process.env.MONGODB_URI)
 
 mongoose.connection.on('connected', () => {
   console.log(`Connected to MongoDB ${mongoose.connection.name}.`)
 });
+app.use(morgan("dev"))
 app.use(cors());
 app.use(express.json())
 

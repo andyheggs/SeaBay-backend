@@ -50,12 +50,13 @@ const listingSchema = new mongoose.Schema({
     
     listingCreated: {type: Date, default: Date.now},
 
-    offers: [{
-        type: Schema.Types.ObjectId,
-        ref: 'Offer'
-    }]
-    
 });
+
+listingSchema.virtual("offers", {
+    ref: 'Offer',
+    localField: '_id',
+    foreignField: 'listing',
+})
 
 const Listing = mongoose.model('Listing', listingSchema);
 

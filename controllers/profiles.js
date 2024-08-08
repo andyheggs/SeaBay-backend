@@ -30,7 +30,7 @@ router.post("/signup", async (req, res) => {
 router.post("/signin", async (req, res) => {
     try {
         // Finds the first User with the corresponding name
-        const user = await User.findOne({username: req.body.username}).populate("listings","offers")
+        const user = await User.findOne({username: req.body.username}).populate("listings", "offers")
         // Hashes req.body.password and compares it to the password from the database
         if (user && bcrypt.compareSync(req.body.password, user.password)){
             // Creates and returns token
@@ -41,6 +41,18 @@ router.post("/signin", async (req, res) => {
         // Returns 400 Invalid input data responce
         return res.status(400).json({error: "Invalid Details"})
         } catch (error) {
+        console.log(error)
+        res.status(500).json({error: error.message})
+    }
+})
+
+router.get("/populate/:userId", async (req, res) => {
+    try {
+        const returnData = await User.findById(req.params.userId)
+        await returnData.populate("listings", "offers")
+        console.log(returnData)
+        return res.status(200).json(returnData)
+    } catch (error) {
         console.log(error)
         res.status(500).json({error: error.message})
     }
