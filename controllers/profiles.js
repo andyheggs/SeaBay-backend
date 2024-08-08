@@ -37,7 +37,6 @@ router.post("/signin", async (req, res) => {
             const token = jwt.sign({user}, process.env.TOKENSECRET);
             return res.status(200).json({token})
         }
-        await newUser.populate("listings","offers")
         // Returns 400 Invalid input data responce
         return res.status(400).json({error: "Invalid Details"})
         } catch (error) {
@@ -48,8 +47,7 @@ router.post("/signin", async (req, res) => {
 
 router.get("/populate/:userId", async (req, res) => {
     try {
-        const returnData = await User.findById(req.params.userId)
-        await returnData.populate("listings", "offers")
+        const returnData = await User.findById(req.params.userId).populate("listings", "offers")
         console.log(returnData)
         return res.status(200).json(returnData)
     } catch (error) {
