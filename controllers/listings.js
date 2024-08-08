@@ -77,7 +77,6 @@ router.post('/', async (req, res) => {
       
       // Attach seller ID from the authed user
       console.log("TYROEPSPSPSD", typeof(req.user._id))
-      req.body.seller = req.user._id
       console.log(req.body)
       // Create new listing in DB
       const listing = await Listing.create(req.body)

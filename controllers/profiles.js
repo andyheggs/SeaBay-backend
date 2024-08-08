@@ -16,7 +16,7 @@ router.post("/signup", async (req, res) => {
         username: req.body.username, 
         password: hashedPassword,
         email: req.body.email
-     }).populate("listings","offers")
+     })
     //  Creates the new token
      const token = jwt.sign({username: newUser.username, _id : newUser._id}, process.env.TOKENSECRET)
     //  Returns both the created user and the token for that user 
