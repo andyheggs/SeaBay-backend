@@ -10,6 +10,28 @@ const router = express.Router();
 //--------------------------------------- PROTECTED ROUTES---------------------------------------//
 router.use(verifyToken);
 
+// GET ALL OFFERS FOR A SPECIFIC LISTING
+router.get("/listing/:listingId", async (req, res) => {
+  try {
+    // Find all offers matching listing ID provided in the request parameters
+    const offers = await Offer.find({ listing: req.params.listingId }).populate('user', 'username email');
+    
+    // If no offers found, respond with a 404 status and error message
+    if (!offers) {
+      return res.status(404).json({ error: 'No offers found for this listing' });
+    }
+    
+    // If offers are found, respond with a 200 status and the offers data in JSON format
+    res.status(200).json(offers);
+  } catch (error) {
+    
+    // Log any errors and respond with a 500 status and error message
+    console.log(error);
+    res.status(500).json({ errorMessage: error.message });
+  }
+});
+
+
 // * GET SPECIFIC OFFER //
 router.get("/:offerId", async (req, res) => {
   try {
@@ -20,16 +42,6 @@ router.get("/:offerId", async (req, res) => {
     res.status(500).json({ errorMessage: error.message });
   }
 });
-
-router.get("/user/:userId", async (req, res) => {
-    try {
-      const userOffers = await Offer.find({user: req.params.userId})
-      res.status(200).json(userOffers)
-    } catch (error) {
-      console.log(error);
-    res.status(500).json({ errorMessage: error.message });
-    }
-  });
 
 // * ACCEPT OR REJECT OFFER FROM A USER (takes a query parameter {rejected: bool})//
 router.put("/assess/:offerId", async (req, res) => {
