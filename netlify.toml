@@ -8,14 +8,3 @@
   from = "/*"
   status = 200
   to = "/.netlify/functions/api/:splat"
-
-[functions]
-  external_node_modules = ["express", "ejs"]
-  node_bundler = "esbuild"
-  included_files = ["views/**", "public/**"]
-
-[[redirects]]
-  force = true
-  from = "/*"
-  status = 200
-  to = "/.netlify/functions/api/:splat"
