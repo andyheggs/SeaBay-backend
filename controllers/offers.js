@@ -21,6 +21,16 @@ router.get("/:offerId", async (req, res) => {
   }
 });
 
+router.get("/user/:userId", async (req, res) => {
+    try {
+      const userOffers = await Offer.find({user: req.params.userId})
+      res.status(200).json(userOffers)
+    } catch (error) {
+      console.log(error);
+    res.status(500).json({ errorMessage: error.message });
+    }
+  });
+
 // * ACCEPT OR REJECT OFFER FROM A USER (takes a query parameter {rejected: bool})//
 router.put("/assess/:offerId", async (req, res) => {
   try {
