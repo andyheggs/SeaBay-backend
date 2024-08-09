@@ -72,7 +72,8 @@ router.put("/assess/:offerId", async (req, res) => {
       return res.status(403).json({ error: "Unauthorized Access" });
     }
     // Use req.query to get query params
-    offer.rejected = req.query.rejected;
+    offer.rejected = true;
+    console.log("ASSESS OFFER", offer)
     const updatedOffer = await Offer.findByIdAndUpdate(req.params.offerId, offer, { new: true });
     res.status(200).json(updatedOffer);
   } catch (error) {
