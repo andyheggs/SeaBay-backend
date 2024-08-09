@@ -10,6 +10,18 @@ const router = express.Router();
 //--------------------------------------- PROTECTED ROUTES---------------------------------------//
 router.use(verifyToken);
 
+
+// * GET SPECIFIC OFFER //
+router.get("/:offerId", async (req, res) => {
+  try {
+    const offer = await Offer.findById(req.params.offerId);
+    res.status(200).json(offer);
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ errorMessage: error.message });
+  }
+});
+
 // GET ALL OFFERS FOR A SPECIFIC LISTING
 router.get("/listing/:listingId", async (req, res) => {
   try {
@@ -18,7 +30,7 @@ router.get("/listing/:listingId", async (req, res) => {
     
     // If no offers found, respond with a 404 status and error message
     if (!offers) {
-      return res.status(404).json({ error: 'No offers found for this listing' });
+      offers = []
     }
     
     // If offers are found, respond with a 200 status and the offers data in JSON format
@@ -31,17 +43,26 @@ router.get("/listing/:listingId", async (req, res) => {
   }
 });
 
-
-// * GET SPECIFIC OFFER //
-router.get("/:offerId", async (req, res) => {
+router.get("/user/:userId", async (req, res) => {
   try {
-    const offer = await Offer.findById(req.params.offerId);
-    res.status(200).json(offer);
+    // Find all offers matching offer ID provided in the request parameters
+    const offers = await Offer.find({ user: req.params.userId });
+    
+    // If no offers found, respond with a 404 status and error message
+    if (!offers) {
+      offers = []
+    }
+    
+    // If offers are found, respond with a 200 status and the offers data in JSON format
+    res.status(200).json(offers);
   } catch (error) {
+    
+    // Log any errors and respond with a 500 status and error message
     console.log(error);
     res.status(500).json({ errorMessage: error.message });
   }
 });
+
 
 // * ACCEPT OR REJECT OFFER FROM A USER (takes a query parameter {rejected: bool})//
 router.put("/assess/:offerId", async (req, res) => {
